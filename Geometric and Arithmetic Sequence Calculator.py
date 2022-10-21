@@ -1,4 +1,4 @@
-#This will determine if a series is geometric or arithmetic
+# This will determine if a series is geometric or arithmetic
 
 print("Enter first 5 terms of series:")
 
