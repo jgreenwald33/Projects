@@ -1,4 +1,4 @@
-# This will determine if a series is geometric or arithmetic
+#This will determine if a series is geometric or arithmetic
 
 print("Enter first 5 terms of series:")
 
@@ -9,7 +9,7 @@ for i in range(5):
     temp_term = int(temp_term)
     terms.append(temp_term)
 
-print ("/nFirst 5 terms:", end=" ")
+print ("\nFirst 5 terms:", end=" ")
 for i in range(5):
     print(int(terms[i]), end=" ")
 
@@ -51,14 +51,6 @@ def is_series_geometric(ratio_first):
     
     return is_geometric
 
-def format_ratio(init_num, denom):
-    difference = int((init_num/denom))
-    remainder = init_num % denom
-
-    numerator = difference + remainder
-
-    print(str(numerator) + "/" + str(denom))
-
 
 is_arithmetic = is_series_arithmetic(init_diff)
 is_geometric = is_series_geometric(init_ratio)
@@ -73,9 +65,8 @@ if is_arithmetic:
 
 elif is_geometric:
     print("The series is geometric!")
-    print("Ratio:", end= " ")
-    format_ratio(terms[1],terms[0])
-
+    print("Ratio: " + str(terms[1]/terms[0]))
+    
     g_term_100 = (terms[0] * (init_ratio**(100 - 1)))
 else:
     print("The series is neither arithmetic or geometric")
