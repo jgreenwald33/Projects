@@ -15,7 +15,11 @@ for i in range(5):
 
 # finds the difference and ratio between the first two terms in the series
 init_diff = terms[1] - terms[0]
-init_ratio = terms[1] / terms[0]
+
+init_ratio = -1
+
+if terms[0] != 0:
+    init_ratio = terms[1] / terms[0]
 
 # returns true if there is a consistent difference between first 10 terms
 def is_series_arithmetic(diff_first):
@@ -40,6 +44,11 @@ def is_series_geometric(ratio_first):
     for x in range(4):
         term_1 = terms[x+1]
         term_2 = terms[x]
+
+        if term_2 == 0:
+            actual_ratio = -9999999
+            break
+
         actual_ratio = actual_ratio + (term_1/term_2)
 
     expected_ratio = ratio_first * 4
@@ -68,6 +77,5 @@ elif is_geometric:
     print("Ratio: " + str(terms[1]/terms[0]))
     
     g_term_100 = (terms[0] * (init_ratio**(100 - 1)))
-    print("100th term of series: " + str(g_term_100))
 else:
     print("The series is neither arithmetic or geometric")
