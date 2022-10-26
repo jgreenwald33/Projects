@@ -68,5 +68,6 @@ elif is_geometric:
     print("Ratio: " + str(terms[1]/terms[0]))
     
     g_term_100 = (terms[0] * (init_ratio**(100 - 1)))
+    print("100th term of series: " + str(g_term_100))
 else:
     print("The series is neither arithmetic or geometric")
